@@ -1,0 +1,21 @@
+body {
+    color: $text-color;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: 1.71;
+    font-weight: 400;
+    // max-width: 1200px;
+    min-width: 320px;
+}
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+}

@@ -1,0 +1,71 @@
+.button {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 11px 30px 13px;
+    border: 3px solid $white;
+    border-radius: 2em;
+    color: $white;
+    background-color: transparent;
+    font-family: $base-font-family;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    outline: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &:hover, &:focus {
+        background-color: $white;
+        color: $pink;
+        outline: none;
+    }
+    &:active {
+        color: rgba($pink, 0.3);
+    }
+    &--bg {
+        background-color: $bg-button;
+        border: none;
+        border-radius: 5px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-transform: uppercase;
+        &:hover, &:focus{
+            background-color: $bg-button-hover;
+            color: $white;
+        }
+        &:active {
+            color: rgba($white, 0.3);
+        }
+    }
+    &--upload {
+        color: $pink;
+        border-color: $pink;
+        padding: 15px 30px 16px;
+        &:hover, &:focus {
+            border-color: $pink;
+            background-color: $pink;
+            color: $white;
+        }
+        &:active {
+            color: rgba($white, 0.3);
+        }
+    }
+    &--cancel {
+        color: rgba($text-color, 0.1);
+        border-color: rgba($text-color, 0.1);
+        padding: 15px 30px 16px;
+        &:hover, &:focus {
+            color: rgba($text-color, 0.3);
+            border-color: rgba($text-color, 0.3);
+        }
+        &:active {
+            color: rgba($white, 0.3);
+            background-color: rgba($text-color, 1);
+            border-color: rgba($text-color, 0.3);
+        }
+    }
+}

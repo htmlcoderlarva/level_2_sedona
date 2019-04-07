@@ -1,0 +1,19 @@
+.container {
+    box-sizing: border-box;
+    width: 320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (min-width: $table) {
+    .container {
+        width: 660px;
+    }
+}
+
+@media (min-width: $desktop) {
+    .container {
+        width: 960px;
+        padding: 0 10px;
+    }
+}
