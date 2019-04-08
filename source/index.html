@@ -14,15 +14,153 @@
 
 <body>
     <header class="main-header">
-
+        <nav class="main-nav">
+            <ul class="main-nav__list">
+                <li class="main-nav__item">
+                    <a href="" class="main-nav__link">Главная</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="" class="main-nav__link">Фото и видео</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="" class="main-nav__link">Форма отзыва</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="" class="main-nav__link">Html academy</a>
+                </li>
+            </ul>
+            <button class="hamburger">Открыть меню</button>
+            <button class="hamburger hamburger--close">Закрыть меню</button>
+        </nav>
+        <a class="logo">
+            <svg></svg>
+        </a>
+        <div class="hero">
+            <img src="image/hero--mobile.png" alt="Добро пожаловать в Седону">
+        </div>
     </header>
 
     <main class="main">
+        <section class="features">
+            <h2 class="section__title features__title">Седона - небольшой городок в Аризоне, заслуживающий большего!</h2>
+            <p class="features__description">Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
 
+            <ol class="features__list">
+                <li class="features__item feature feature--with-img">
+                    <div class="feature__img">
+                        <img src="image/feature-1.jpg" alt="Настоящий городок">
+                    </div>
+                    <div class="feature__content">
+                        <h3 class="feature__title">Настоящий городок</h3>
+                        <p class="feature__description">Седона не аттракцион для туристов, там течет своя жизнь</p>
+                    </div>
+                </li>
+                <li class="features__item feature feature--with-img">
+                    <div class="feature__img">
+                        <img src="image/feature-2.jpg" alt="Мост дьявола">
+                    </div>
+                    <div class="feature__content">
+                        <h3 class="feature__title">Там есть мост дьявола</h3>
+                        <p class="feature__description">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
+                    </div>
+                </li>
+                <li class="features__item feature">
+                    <div class="feature__content">
+                        <h3 class="feature__title">Небольшая площадь</h3>
+                        <p class="feature__description">Все интересные места находятся очень близко</p>
+                    </div>
+                </li>
+                <li class="features__item feature">
+                    <div class="feature__content">
+                        <h3 class="feature__title">Красивая дорога</h3>
+                        <p class="feature__description">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+                    </div>
+                </li>
+                <li class="features__item feature">
+                    <div class="feature__content">
+                        <h3 class="feature__title">Мало туристов</h3>
+                        <p class="feature__description">Большинство едет в Гранд Каньон и толпится там</p>
+                    </div>
+                </li>
+                <li class="features__item feature">
+                    <ul class="feature__sublist">
+                        <li class="feature__subitem subfeature">
+                            <div class="subfeature__content">
+                                <svg class="icon-svg" width="39" height="37">
+                                    <use xlink:href="image/svg/sprite.svg#icon-home"></use>
+                                </svg>
+                                <h3 class="subfeature__title">Жилье</h3>
+                                <p class="subfeature__description">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+                            </div>
+                        </li>
+                        <li class="feature__subitem subfeature">
+                            <div class="subfeature__content">
+                                <svg class="icon-svg" width="32" height="38">
+                                    <use xlink:href="image/svg/sprite.svg#icon-gift"></use>
+                                </svg>
+                                <h3 class="subfeature__title">Сувениры</h3>
+                                <p class="subfeature__description">Не только китайского, но и местного производства!</p>
+                            </div>
+                        </li>
+                        <li class="feature__subitem subfeature">
+                            <div class="subfeature__content">
+                                <svg class="icon-svg" width="40" height="35">
+                                    <use xlink:href="image/svg/sprite.svg#icon-home"></use>
+                                </svg>
+                                <h3 class="subfeature__title">Еда</h3>
+                                <p class="subfeature__description">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section class="booking">
+            <h2 class="section__title">Заинтересовались?</h2>
+            <p class="booking__description">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+            <a href="/" class="button booking__link">Найти гостиницу</a>
+        </section>
+
+        <section class="map" id="map"></section>
     </main>
 
-    <footer class="footer">
-
+    <footer class="main-footer">
+        <a href="/" class="link link--hashtag">#visitsedona</a>
+        <div class="social">
+            <ul class="social__list">
+                <li class="social__item">
+                    <a href="/" class="social__link">
+                        <svg class="icon-svg">
+                            <use xlink:href="image/svg/sprite.svg#icon-twitter"></use>
+                        </svg>
+                        Twitter
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="/" class="social__link">
+                        <svg class="icon-svg">
+                            <use xlink:href="image/svg/sprite.svg#icon-facebook"></use>
+                        </svg>
+                        Facebook
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="/" class="social__link">
+                        <svg class="icon-svg">
+                            <use xlink:href="image/svg/sprite.svg#icon-youtube"></use>
+                        </svg>
+                        Youtube
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <span class="copyright__text">Разработано</span>
+            <svg class="icon-svg">
+                <use xlink:href="image/svg/sprite.svg#icon-htmlacadey"></use>
+            </svg>
+        </div>
     </footer>
         
     <script src="js/main.js"></script>
