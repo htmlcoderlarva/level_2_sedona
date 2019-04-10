@@ -5,7 +5,7 @@ var postcss = require('gulp-postcss');
 var posthtml = require('gulp-posthtml');
 var include = require('posthtml-include');
 var autoprefixer = require('autoprefixer');
-var server = require('browser-sync').create();
+var browserSync = require('browser-sync').create();
 var rename = require('gulp-rename');
 var minify = require('gulp-csso');
 var imagemin = require('gulp-imagemin');
@@ -14,6 +14,7 @@ var imageminPngquant = require('imagemin-pngquant');
 var webp = require('gulp-webp');
 var svgstore = require('gulp-svgstore');
 var del = require('del');
+var dirSync = require('gulp-directory-sync');
 
 
 gulp.task('style', function() {
@@ -59,6 +60,7 @@ gulp.task('sprite', function() {
         .pipe(rename('sprite.svg'))
 
         .pipe(gulp.dest('build/image/svg'));
+        // .pipe(gulp.dest('source/image/svg'));
 });
 
 gulp.task('webp', function() {
@@ -77,17 +79,15 @@ gulp.task('html', function() {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('serve', function() {
-    server.init({
-        // server: 'build/'
-        server: 'source/'
+gulp.task('browserSync', function() {
+    browserSync.init({
+        server: 'build/'
+        // server: 'source/'
     });
 
-    gulp.watch('source/sass/**/*.scss', gulp.series('style'));
-    // gulp.watch('source/*.html').on('change', server.reload);
-    // gulp.watch('source/*.html', gulp.series('html'));
-    gulp.watch('source/*.html', gulp.series('html')).on('change', server.reload);
-    gulp.watch('source/js/*.js').on('change', server.reload);
+    // gulp.watch('source/sass/**/*.scss', gulp.series('style'));
+    // gulp.watch('source/*.html', gulp.series('html')).on('change', server.reload);
+    // gulp.watch('source/js/*.js').on('change', server.reload);
 
 });
 
@@ -108,5 +108,79 @@ gulp.task('clean', function() {
 });
 
 gulp.task('build', gulp.series('clean', 'copy', 'style', 'images', 'webp', 'sprite', 'html'));
+
+
+
+
+
+gulp.task('style', function() {
+    return gulp.src('source/sass/style.scss')
+
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(postcss([
+            autoprefixer()
+        ]))
+        .pipe(gulp.dest('build/css'))
+        .pipe(minify())
+        .pipe(rename('style.min.css'))
+        .pipe(gulp.dest('build/css'))
+
+        .pipe(browserSync.stream());
+});
+
+gulp.task('html', function() {
+    return gulp.src('source/*.html')
+
+        .pipe(posthtml([
+            include()
+        ]))
+        .pipe(gulp.dest('build'));
+});
+
+//-------------------------------------------------Synchronization
+
+gulp.task('imageSync', function () {
+	return gulp.src('/')
+		.pipe(plumber())
+        .pipe(dirSync('source/image', 'build/image', {printSummary: true}))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('fontsSync', function () {
+	return gulp.src('/')
+		.pipe(plumber())
+		.pipe(dirSync('source/fonts', 'build/fonts', {printSummary: true}))
+		.pipe(browserSync.stream());
+});
+
+gulp.task('jsSync', function () {
+	return gulp.src('source/js/*.js')
+		.pipe(plumber())
+		.pipe(gulp.dest('build/js/'))
+		.pipe(browserSync.stream());
+});
+
+//-------------------------------------------------Synchronization###
+
+//watching files and run tasks
+gulp.task('watch', function () {
+    gulp.watch('source/sass/**/*.scss', gulp.series('style'));
+    gulp.watch('source/*.html', gulp.series('html')).on('change', browserSync.reload);
+    gulp.watch('source/js/*.js', gulp.series('jsSync'));
+    gulp.watch('source/image/**/*', gulp.series('imageSync'));
+    gulp.watch('source/fonts/**/*', gulp.series('fontsSync'));
+});
+
+gulp.task('default', gulp.parallel(
+    'style',
+    'html',
+    'imageSync',
+    'fontsSync',
+    'jsSync',
+    'watch',
+    'browserSync'
+));
+
 
 // gulp.task('default', gulp.series('serve'));
