@@ -79,7 +79,8 @@ gulp.task('html', function() {
 
 gulp.task('serve', function() {
     server.init({
-        server: 'build/'
+        // server: 'build/'
+        server: 'source/'
     });
 
     gulp.watch('source/sass/**/*.scss', gulp.series('style'));
