@@ -1,75 +1,8 @@
 .header {
-    position: relative;
-    font-size: $base-font-size;
-    font-family: $base-font-family;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    min-height: 730px;
-    // background: $accent url("../../image/retina/header-back--mobile.jpg") no-repeat center center / 320px auto;
-    background: $accent url("../image/header-back--mobile.jpg") no-repeat center top / contain;
-    @media  (min-resolution: 144dpi),
-            (min-resolution: 1.5dppx) {
-            background-image: url(../image/header-back--mobile@2x.jpg);
-    }
 }
 
 @media (min-width: $table) {
-    .header {
-        min-height: 730px;
-        background: $accent url("../image/header-back--tablet.jpg") no-repeat center bottom / 1200px auto;
-        @media  (min-resolution: 144dpi),
-                (min-resolution: 1.5dppx) {
-                background-image: url(../image/header-back--tablet@2x.jpg);
-        }
-    }
 }
 
 @media (min-width: $desktop) {
-    .header {
-        min-height: 853px;
-        background: $accent url("../image/header-back--desktop.jpg") no-repeat center bottom / 1200px auto;
-        @media  (min-resolution: 144dpi),
-                (min-resolution: 1.5dppx) {
-                background-image: url(../image/header-back--desktop@2x.jpg);
-        }
-    }
-}
-
-.inner-page {
-    .header {
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 237px;
-        padding: 100px 0 50px;
-        background-size: cover;
-    }
-}
-
-@media (min-width: $table) {
-    .inner-page {
-        .header {
-            min-height: 440px;
-            padding: 185px 0 75px;
-            background-position-y: top;
-        }
-        &--photo {
-            .header {
-                padding: 170px 0 140px;
-            }
-        }
-    }
-}
-@media (min-width: $desktop) {
-    .inner-page {
-        .header {
-            min-height: 395px;
-            padding: 165px 0 90px;
-            background-position-y: top;
-        }
-    }
 }
