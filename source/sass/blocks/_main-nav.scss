@@ -1,15 +1,103 @@
 .main-nav {
-    
+    position: relative;
+    padding-bottom: 55px;
 }
 .main-nav__list {
     margin: 0;
     padding: 0;
     list-style-type: none;
-
 }
 .main-nav__item {
-
+    &:last-child {
+        .main-nav__link {
+            background-image: linear-gradient(
+                to top, 
+                rgba(#1a242a, 0.2), 
+                transparent);
+            background-repeat: no-repeat;
+            background-size: 100% 7px;
+            background-position: center bottom;
+        }
+    }
 }
 .main-nav__link {
+    display: block;
+    padding: 18px 20px 21px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    border-top: 1px solid rgba(#fff, 0.2);
+    border-bottom: 1px solid rgba(#000, 0.2);
+    background-color: $accent;
+    transition: background-color 0.25s ease; 
+    &:hover, &:focus {
+        background-color: $accent-darken;
+    }
+    &:active {
+        background-color: $accent-dark;
+        color: rgba(#fff, 0.3);
+    }
+}
 
+@media (min-width: $tablet) {
+    .main-nav {
+        padding-bottom: 0;
+    }
+
+    .main-nav__list {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .main-nav__item {
+        width: 20%;
+        box-shadow: none;
+        &:last-child {
+            .main-nav__link {
+                background-image: none;
+            }
+        }
+
+        &:nth-child(4n+2) {
+            margin-right: 10%;
+        }
+
+        &:nth-child(4n+3) {
+            margin-left: 10%;
+        }
+    }
+    .main-nav__link {
+        padding-left: 0;
+        padding-right: 0;
+
+        font-size: 14px;
+
+        border: none;
+        background-color: transparent;
+        color: #000;
+
+        &:hover, &:focus {
+            background-color: transparent;
+            color: $accent;
+        }
+        &:active {
+            background-color: transparent;
+            color: rgba(#000, 0.3);
+        }
+
+        &--active {
+            color: #766357;
+
+            &:hover, &:focus {
+                color: #604e43;
+            }
+            &:active {
+                color: rgba(#766357, 0.3);
+            }
+            
+        }
+    }
 }

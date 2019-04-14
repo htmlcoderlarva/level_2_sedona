@@ -13,11 +13,11 @@
 </head>
 
 <body>
-    <header class="main-header">
+    <header class="main-header main-header__container container">
         <nav class="main-nav">
             <ul class="main-nav__list">
                 <li class="main-nav__item">
-                    <a href="" class="main-nav__link">Главная</a>
+                    <a href="" class="main-nav__link main-nav__link--active">Главная</a>
                 </li>
                 <li class="main-nav__item">
                     <a href="" class="main-nav__link">Фото и видео</a>
@@ -31,12 +31,19 @@
             </ul>
             <button class="hamburger">Открыть меню</button>
             <button class="hamburger hamburger--close">Закрыть меню</button>
+
+            <a class="logo">
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="image/svg/logo--big.svg">
+
+                        <img src="image/svg/logo--small.svg" alt="Логотип Седона">
+                    </picture>
+                <!-- <include src="build/image/svg/logo--small.svg"></include>
+                <include src="build/image/svg/logo--big.svg"></include> -->
+            </a>
         </nav>
-        <a class="logo">
-            <svg></svg>
-        </a>
         <div class="hero">
-            <img src="image/hero--mobile.png" alt="Добро пожаловать в Седону">
+            <include src="build/image/svg/hero.svg"></include>
         </div>
     </header>
 

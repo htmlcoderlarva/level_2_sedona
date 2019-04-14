@@ -1,5 +1,7 @@
 body {
     min-width: 320px;
+    max-width: 1200px;
+    margin: 0 auto;
 
     font-family: $base-font-family;
     font-size: $base-font-size;
@@ -7,6 +9,10 @@ body {
     font-weight: normal;
 
     color: $text-color;
+
+    @media (min-width: $desktop) {
+        box-shadow: 5px 0 15px 0 rgba(#000, 0.3);
+    }
 }
 
 img {
