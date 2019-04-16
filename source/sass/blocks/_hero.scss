@@ -39,6 +39,21 @@
     }
 }
 
+.inner-page {
+    .hero {
+        min-height: 159px;
+        padding-top: 51px;
+
+        background-position: center bottom;
+
+        svg {
+            width: 229px;
+            height: 39px;
+            fill: #fff;
+        }
+    }
+}
+
 @media (min-width: $tablet) {
     .hero {
         min-height: 518px;
@@ -58,6 +73,37 @@
 
         &::after {
             height: 57px;
+        }
+    }
+
+    .inner-page {
+        .hero {
+            min-height: 290px;
+            padding-top: 95px;
+    
+            background-size: 157%;
+    
+            svg {
+                width: 458px;
+                height: 78px;
+            }
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+
+    .inner-page {
+        .hero {
+            min-height: 301px;
+            padding-top: 102px;
+    
+            background-size: 100%;
+    
+            svg {
+                width: 461px;
+                height: 79px;
+            }
         }
     }
 }
