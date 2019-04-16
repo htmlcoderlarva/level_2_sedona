@@ -1,0 +1,24 @@
+.logo {
+    display: block;
+    width: 102px;
+    height: 83px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -28px;
+
+    z-index: 5;
+}
+
+@media (min-width: $tablet) {
+    .logo {
+        top: 0;
+    }
+}
+@media (min-width: $desktop) {
+    .logo {
+        width: 188px;
+        height: 96px;
+    }
+}

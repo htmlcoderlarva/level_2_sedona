@@ -1,0 +1,63 @@
+.hero {
+    position: relative;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    min-height: 390px;
+    padding-top: 90px;
+
+    background-image: url("../image/bg/back-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    background-color: #deecf5;
+
+    @media  (min-resolution: 144dpi),
+            (min-resolution: 1.5dppx) {
+            background-image: url("../image/bg/back-mobile@2x.jpg");
+    }
+
+    svg {
+        width: 282px;
+        height: 214px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0; 
+        right: 0;
+        height: 30px;
+        background-image: url("../image/svg/hero-triangle.svg");
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+}
+
+@media (min-width: $tablet) {
+    .hero {
+        min-height: 518px;
+        padding-top: 75px;
+
+        background-image: url("../image/bg/back-desktop.jpg");
+
+        @media  (min-resolution: 144dpi),
+                (min-resolution: 1.5dppx) {
+                background-image: url("../image/bg/back-desktop@2x.jpg");
+        }  
+        
+        svg {
+            width: 460px;
+            height: 350px;
+        }
+
+        &::after {
+            height: 57px;
+        }
+    }
+}

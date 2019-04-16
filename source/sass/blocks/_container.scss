@@ -5,15 +5,16 @@
     padding: 0 20px;
 }
 
-@media (min-width: $table) {
+@media (min-width: $tablet) {
     .container {
-        width: 660px;
+        width: 768px;
+        padding: 0 34px;
     }
 }
 
 @media (min-width: $desktop) {
     .container {
-        width: 960px;
+        width: 1200px;
         padding: 0 10px;
     }
 }

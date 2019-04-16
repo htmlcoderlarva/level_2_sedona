@@ -1,0 +1,36 @@
+.map {
+    width: 100%;
+    min-height: 350px;
+    background-color: #eee;
+    background-image: url("../image/bg/map-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @media  (min-resolution: 144dpi),
+            (min-resolution: 1.5dppx) {
+            background-image: url("../image/bg/map-mobile@2x.jpg");
+    }
+}
+
+@media (min-width: $tablet) {
+    .map {
+        background-image: url("../image/bg/map-tablet.jpg");
+
+        @media  (min-resolution: 144dpi),
+                (min-resolution: 1.5dppx) {
+                background-image: url("../image/bg/map-tablet@2x.jpg");
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .map {
+        background-image: url("../image/bg/map-desktop.jpg");
+
+        @media  (min-resolution: 144dpi),
+                (min-resolution: 1.5dppx) {
+                background-image: url("../image/bg/map-desktop@2x.jpg");
+        }
+    }
+}

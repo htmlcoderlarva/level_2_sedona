@@ -1,0 +1,118 @@
+.subfeature {
+
+}
+
+.subfeature__list {
+    margin: 0;
+    padding: 34px 20px 18px;
+    list-style-type: none;
+
+    background-color: #fff;
+}
+
+.subfeature__item {
+    margin-bottom: 28px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.subfeature__content {
+    position: relative;
+    padding-left: 50px;
+    text-align: left;
+
+    .icon-svg {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        fill: $accent;
+    }
+}
+.subfeature__title {
+    font-size: 18px;
+    margin: 0 0 13px;
+    color: #000;
+}
+.subfeature__description {
+    margin: 0 0 20px;
+}       
+
+@media (min-width: $tablet) {
+    .subfeature {
+    }
+
+    .subfeature__list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+
+        padding: 60px 0 16px;
+    }
+
+    .subfeature__item {
+        width: 33.33%;
+        &:nth-child(1) {
+            order: 1;
+        }
+        &:nth-child(2) {
+            order: 3;
+        }
+        &:nth-child(3) {
+            order: 2;
+        }
+    }
+
+    .subfeature__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 0;
+        text-align: center;
+    
+        .icon-svg {
+            position: static;
+            top: 0;
+
+            margin-bottom: 22px;
+
+            &--home {
+                width: 75px;
+                height: 72px;
+            }
+            &--gift {
+                width: 64px;
+                height: 75px;
+            }
+            &--hamburger {
+                width: 77px;
+                height: 68px;
+            }
+        }
+    }
+
+    .subfeature__title {
+        font-size: 21px;
+        margin: 0 0 18px;
+    }
+
+    .subfeature__description {
+        padding: 0 45px;
+    }
+}
+
+
+@media (min-width: $desktop) {
+    .subfeature {
+
+        .icon-svg {
+            margin-bottom: 27px;
+        }
+    }
+
+    .subfeature__list {
+        padding: 54px 0 35px;
+    }
+}
