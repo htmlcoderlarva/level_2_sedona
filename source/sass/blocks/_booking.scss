@@ -1,0 +1,41 @@
+.booking {
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 26px 20px 50px;
+
+    .section-title {
+        margin-bottom: 19px;
+        font-size: 21px;
+        color: #000;
+    }
+}
+.booking__description {
+    text-align: center;
+    text-transform: uppercase;
+
+    margin: 0 0 36px;
+    line-height: 1.65;
+}
+
+@media (min-width: $tablet) {
+    .booking {
+        padding: 47px 20px 60px;
+
+        .section-title {
+            font-size: 30px;
+        }
+    }
+
+    .booking__description {
+        margin: 0 0 45px;
+    }
+}
+
+@media (min-width: $desktop) {
+    .booking {
+        padding: 47px 20px 67px;
+    }
+    .booking__description {
+        margin: 0 0 50px;
+    }
+}

@@ -1,0 +1,17 @@
+.link {
+    &--hashtag {
+        font-size: 21px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #000;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+        &:active {
+            text-decoration: none;
+            opacity: 0.8;
+        }
+    }
+}

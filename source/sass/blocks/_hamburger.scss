@@ -41,8 +41,11 @@
 
     &--close {
         position: absolute;
-        top: 17px;
+        top: 15px;
         right: 20px;
+
+        width: 23px;
+        height: 22px;
         &::before, &::after {
             background-color: #fff;
             box-shadow: none;
