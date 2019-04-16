@@ -36,6 +36,7 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^7.0.0",
     "node-sass": "^4.11.0",
+    "pixel-glass": "^1.0.13",
     "posthtml-include": "^1.2.0"
   }
 }

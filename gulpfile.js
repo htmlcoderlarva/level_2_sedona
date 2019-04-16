@@ -50,7 +50,13 @@ gulp.task('sprite', function() {
     return gulp.src('source/image/svg/icon-*.svg')
 
         .pipe(imagemin([
-            imagemin.svgo()
+            // imagemin.svgo({removeViewBox: false})
+            // imagemin.svgo({plugins: [{removeViewBox: false}]})
+            imagemin.svgo({
+                plugins: [
+                    {removeViewBox: false}
+                ]
+            })
         ]))
 
         .pipe(svgstore({
